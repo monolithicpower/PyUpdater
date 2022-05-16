@@ -34,8 +34,8 @@ import zipfile
 
 try:
     from UserDict import DictMixin
-except ImportError:
-    from collections import MutableMapping as DictMixin
+except (ImportError, ModuleNotFoundError):
+    from collections.abc  import MutableMapping as DictMixin
 
 import certifi
 from dsdev_utils import paths
